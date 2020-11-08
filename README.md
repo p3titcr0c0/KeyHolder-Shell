@@ -1,12 +1,13 @@
 # KeyHolder-Shell
-Outil regroupant les utilisations majeures du shell Unix en chapitres.
+Outil regroupant les utilisations majeures du shell Unix en différents chapitres.
 
 ## Installation
 
 Avec git:
 ```bash
-with git: git clone https://github.com/p3titcr0c0/KeyHolder-Shell
+git clone https://github.com/p3titcr0c0/KeyHolder-Shell
 ```
+
 En téléchargement direct:
 ```bash
 wget https://github.com/p3titcr0c0/KeyHolder-Shell/archive/main.zip

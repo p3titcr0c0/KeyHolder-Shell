@@ -24,6 +24,25 @@ chmod main.c -o execute
 ```
 ## Chapitres
 
+1. Le terminal de commandes
+2. Répertoires de Linux
+3. Manipulation de fichiers
+4. Droits d'accès aux fichiers
+5. Raccourcis clavie
+6. Archivage
+7. Redirections
+8. Script en shell (Bash)
+9. Compilation
+10. Expressions régulières et  patterns
+11. Le shell et les expressions régulières
+12. Grep
+13. Sed
+14. Awk
+15. Utilisation de Git
+16. Gestion des processus
+17. Svn
+18. SSH et clefs
+
 ## Screenshots
 
 ![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/slide.png "Page initial")

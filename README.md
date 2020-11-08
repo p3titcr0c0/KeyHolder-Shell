@@ -26,5 +26,8 @@ chmod main.c -o execute
 
 ## Screenshots
 
+![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/slide.png "Page initial")
+![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/chapters.png "Les chapitres")
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+typedef int bool;
+#define false 0
+#define true 1
+
 /*------------------------------------------------------------*/
 /*                      KeyHolder Shell                       */
 /* Date :                                                     */
@@ -74,8 +78,8 @@ void tableDesMatieres(){
 	printf("└");t(32);printf("┴");t(32);printf("┘\n\n");
 }
 
-int choix(int err){
-	if (err==0){
+int choix(bool err){
+	if (err==false){
 		printf("Entrer le chapitre qui vous intèresse ?\n");
 	}
 	else{
@@ -92,10 +96,61 @@ int choix(int err){
     }
 }
 
+/*                       CHAPITRES                        */
+/*1. Le terminal de commandes                       nom: chapter1()  */
+/*2. Répertoires de Linux                           nom: chapter2()  */
+/*3. Manipulation de fichiers                       nom: chapter3()  */
+/*4. Droits d'accès aux fichiers                    nom: chapter4()  */
+/*5. Raccourcis clavier                             nom: chapter5()  */
+/*6. Archivage                                      nom: chapter6()  */
+/*7. Redirections                                   nom: chapter7()  */
+/*8. Script en shell (Bash)                         nom: chapter8()  */
+/*9. Compilation                                    nom: chapter1()  */
+/*10. Expressions régulières et  patterns           nom: chapter9()  */
+/*11. Le shell et les expressions régulières        nom: chapter10()  */
+/*12. Grep                                          nom: chapter11()  */
+/*13. Sed                                           nom: chapter12()  */
+/*14. Awk                                           nom: chapter13()  */
+/*15. Utilisation de Git                            nom: chapter14()  */
+/*16. Gestion des processus                         nom: chapter15()  */
+/*17. Svn                                           nom: chapter16()  */
+/*18. SSH et clefs                                  nom: chapter17()  */
+
+void chapter1(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                   \033[38;5;82m1. Le terminal de commandes\033[0m                   │\n├");
+	t(65);printf("┤\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n"); 
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n"); 
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n"); 
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("└");t(65);printf("┘\n\n");
+}
+
 void decision(int x){
 	switch(x){
         case 0 : system("clear"); break; //quitter
-        //case 1 : printf("2"); break;
+        case 1 : chapter1(); break;
         //case 2 : printf("2"); break;
         //case 3 : printf("2"); break;
         //case 4 : printf("2"); break;
@@ -109,11 +164,9 @@ void decision(int x){
         //case 12 : printf("2"); break;
         //case 13 : printf("2"); break;
         //case 14 : printf("2"); break;
-        default: system("clear");tableDesMatieres();int n = choix(1);decision(n); break;
+        default: system("clear");tableDesMatieres();int n = choix(true);decision(n); break;
     }
 }
-
-/*                CHAPITRES                */
 
 int main(int argc, char *argv[]){
 	system("clear");
@@ -122,7 +175,7 @@ int main(int argc, char *argv[]){
     printf("\n\033[0m");
     sleep(3);system("clear");
     tableDesMatieres();
-    int n = choix(0);
+    int n = choix(false);
     
     decision(n);
   return 0;

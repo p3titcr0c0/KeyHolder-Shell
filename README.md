@@ -1,5 +1,5 @@
 # KeyHolder-Shell
-Outil regroupant les utilisations majeures du shell Unix en différents chapitres.
+Outil écrit en C regroupant les utilisations majeures du shell Unix en différents chapitres.
 
 ## Installation
 
@@ -22,3 +22,9 @@ cd KeyHolder-Shell
 chmod main.c -o execute
 ./execute
 ```
+## Chapitres
+
+## Screenshots
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

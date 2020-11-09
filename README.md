@@ -21,6 +21,8 @@ rm main.zip
 cd KeyHolder-Shell
 chmod main.c -o execute
 ./execute
+#if you want the english version : just add -en or -EN
+./execute -en
 ```
 ## Chapitres
 

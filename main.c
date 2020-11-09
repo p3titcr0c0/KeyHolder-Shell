@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+
+#include "lang.h"
+int i = 0;
 
 typedef int bool;
 #define false 0
@@ -8,10 +12,8 @@ typedef int bool;
 
 /*------------------------------------------------------------*/
 /*                      KeyHolder Shell                       */
-/* Date :                                                     */
-char DATE[] = "Novembre 2020";
 /* Version :                                                  */
-float VERSION = 1.5;
+float VERSION = 1.7;
 /* Utilité : Pense bête pour le shell                         */
 /* Autheur : Petitcroco                                       */
 /* Github :                                                   */
@@ -24,7 +26,7 @@ void slide(){
   	FILE *fichier = fopen("slide.txt","r");
   	char mot[100];
   	if (fichier==NULL){
-    	printf("\033[0;31mErreur: slide.txt manquant - slide() ligne 10 !\033[0m\n");
+    	printf("\033[0;31m%s\033[0m\n",ERR1[i]);
   	}
   	else{
   		printf("\033[01;33m");
@@ -49,7 +51,7 @@ void infos(){
 	t(64);
 	printf("┐\n│                        \033[0;34mKey-holder shell\033[0;31m                        │\n├");
 	t(64);
-	printf("┤\n│ \033[0;34m%s\033[0;31m                                                  │\n│ \033[0;34mVersion : %.1f\033[0;31m                                                  │\n│ \033[0;34mAuteur : petitcroco\033[0;31m                                            │\n├",DATE,VERSION);
+	printf("┤\n│ \033[0;34m%s\033[0;31m                                                  │\n│ \033[0;34mVersion : %.1f\033[0;31m                                                  │\n│ \033[0;34m%s petitcroco\033[0;31m                                            │\n│ \033[0;34m%s\033[0;31m                                            │\n├",DATE[i],VERSION,AUT[i],LANG[i]);
 	t(64);
 	printf("┤\n│          \033[0;34m%s\033[0;31m         │\n└", GITHUB);
 	t(64);
@@ -57,38 +59,38 @@ void infos(){
 }
 
 void tableDesMatieres(){
-	printf("┌");t(65);printf("┐\n│                        \033[0;31mTable des Matières\033[0m                       │\n├");
+	printf("┌");t(65);printf("┐\n│                        \033[0;31m%s\033[0m                       │\n├",TABLEM_titre[i]);
 	t(32);printf("┬");t(32);printf("┤\n");
-	printf("│ 1. Le terminal de commandes    ¦ 15. Utilisation de Git         │\n");
-	printf("│ 2. Répertoires de Linux        ¦ 16. Gestion des processus      │\n");
-	printf("│ 3. Manipulation de fichiers    ¦ 17. Svn                        │\n");
-	printf("│ 4. Droits d'accès aux fichiers ¦ 18. SSH et clefs               │\n");
-	printf("│ 5. Raccourcis clavier          ¦                                │\n");
-	printf("│ 6. Archivage                   ¦                                │\n");
-	printf("│ 7. Redirections                ¦                                │\n");
-	printf("│ 8. Script en shell (Bash)      ¦                                │\n");
-	printf("│ 9. Compilation                 ¦                                │\n");
-	printf("│ 10. Expressions régulières et  ¦                                │\n");
-	printf("│     patterns                   ├────────────────────────────────┤\n");
-	printf("│ 11. Le shell et les            │   Toutes aides / suggestions   │\n");
-	printf("│     expressions régulières     │      sont les bienvenues!      │\n");
-	printf("│ 12. Grep                       │       Discord : Mat#2728       │\n"); 
-	printf("│ 13. Sed                        ├────────────────────────────────┤\n");
-	printf("│ 14. Awk                        │ Page 1/1             0. Quitter│\n");
+	printf("%s\n",TABLEM_ligne1[i]);
+	printf("%s\n",TABLEM_ligne2[i]);
+	printf("%s\n",TABLEM_ligne3[i]);
+	printf("%s\n",TABLEM_ligne4[i]);
+	printf("%s\n",TABLEM_ligne5[i]);
+	printf("%s\n",TABLEM_ligne6[i]);
+	printf("%s\n",TABLEM_ligne7[i]);
+	printf("%s\n",TABLEM_ligne8[i]);
+	printf("%s\n",TABLEM_ligne9[i]);
+	printf("%s\n",TABLEM_ligne10[i]);
+	printf("%s\n",TABLEM_ligne11[i]);
+	printf("%s\n",TABLEM_ligne12[i]);
+	printf("%s\n",TABLEM_ligne13[i]);
+	printf("%s\n",TABLEM_ligne14[i]);
+	printf("%s\n",TABLEM_ligne15[i]);
+	printf("%s\n",TABLEM_ligne16[i]);
 	printf("└");t(32);printf("┴");t(32);printf("┘\n\n");
 }
 
 int choix(bool err){
 	if (err==false){
-		printf("Entrer le chapitre qui vous intèresse ?\n");
+		printf("%s\n",INT1[i]);
 	}
 	else{
-		printf("Il semblerait que vous ayez fait une erreur, que recherchez vous ?\n");
+		printf("%s\n",INT2[i]);
 	}
     int n, res;
     res = scanf("%d", &n);
     if (res != 1){
-    	printf("\033[0;31mErreur: problème d'input - choix() ligne 66 !\033[0m\n");
+    	printf("\033[0;31m%s\033[0m\n",ERR2[i]);
     	exit(1);
     }
     else{
@@ -137,13 +139,6 @@ void chapter1(){
 	printf("│                                                                 │\n");
 	printf("│                                                                 │\n");
 	printf("│                                                                 │\n");
-	printf("│                                                                 │\n"); 
-	printf("│                                                                 │\n");
-	printf("│                                                                 │\n");
-	printf("│                                                                 │\n");
-	printf("│                                                                 │\n"); 
-	printf("│                                                                 │\n");
-	printf("│                                                                 │\n");
 	printf("└");t(65);printf("┘\n\n");
 }
 
@@ -169,6 +164,11 @@ void decision(int x){
 }
 
 int main(int argc, char *argv[]){
+	if(argc>1){
+		if( strcmp(argv[1],"-en") == 0 || strcmp(argv[1],"-EN") == 0 ){
+			i = 1;
+		}
+	}
 	system("clear");
 	slide();
     infos();

@@ -13,6 +13,7 @@ const char *LANG[] = {"Langage : Francais ","Language : English "};
 /* Gestion d'erreurs */
 const char *ERR1[] = {"Erreur: slide.txt manquant - slide() ligne 10 !","Error: missing slide.txt - slide () line 10 !"};
 const char *ERR2[] = {"Erreur: problème d'input - choix() ligne 66 !","Error: input problem - choice () line 66 !"};
+const char *ERR3[] = {"Erreur: problème d'input - interogation() ligne 86 !","Error: input problem - interogation () line 86 !"};
 
 /* Table des Matières */
 const char *TABLEM_titre[] = {"Table des Matières","Table of Contents "};
@@ -35,6 +36,28 @@ const char *TABLEM_ligne16[] = {"│ 14. Awk                        │Page 1/1 
 
 /* Interogation */
 const char *INT1[] = {"Entrer le chapitre qui vous intèresse ?","Enter the chapter that interests you ?"};
-const char *INT2[] = {"Il semblerait que vous ayez fait une erreur, que recherchez vous ?","Looks like you made a mistake, what are you looking for ?"};
+//const char *INT2[] = {"Il semblerait que vous ayez fait une erreur, que recherchez vous ?","Looks like you made a mistake, what are you looking for ?"};
+const char *INT3[] = {"Que souhaite tu faire ?","What do you want to choose ?"};
 
-
+/* InteroChap */
+const char *CHO1[] = {"1. Revenir au menu         ","1. Back to the main page   "};
+const char *CHO2[] = {"0. Quitter","0. Leave  "};
+/* Chapitres */
+const char *CHAPTER1_titre[] = {"Le terminal de commandes","    Command terminal    "};
+const char *CHAPTER1_ligne1[] = {"│ Syntaxe d'une commande :                                        │","│ │"};
+const char *CHAPTER1_ligne2[] = {"│ commande [option...] [argument]                                 │","│ │"};
+const char *CHAPTER1_ligne3[] = {"│ D'une manière générale :                                        │","│ │"};
+const char *CHAPTER1_ligne4[] = {"│ -i : interactif, demande des confirmations quand nécessaire     │","│ │"};
+const char *CHAPTER1_ligne5[] = {"│ -f, --force : force l'exécution                                 │","│ │"};
+const char *CHAPTER1_ligne6[] = {"│ -h, --help : affiche l'aide de la commande                      │","│ │"};
+const char *CHAPTER1_ligne7[] = {"│ -v, --verbose : mode bavard (verbieux)                          │","│ │"};
+const char *CHAPTER1_ligne8[] = {"│                                                                 │","│ │"};
+const char *CHAPTER1_ligne9[] = {"│ On peut afficher l'aide sur le terminal avec :                  │","│ │"};
+const char *CHAPTER1_ligne10[] = {"│ help [+ commande si désirée]                                    │","│ │"};
+const char *CHAPTER1_ligne11[] = {"│ Avoir accès au manuel : man commande                            │","│ │"};
+const char *CHAPTER1_ligne12[] = {"│                                                                 │","│ │"};
+const char *CHAPTER1_ligne13[] = {"│ -- est utilisé pour les paramètres de plusieurs lettres         │","│ │"};
+const char *CHAPTER1_ligne14[] = {"│ Caractères spéciaux utiles :                                    │","│ │"};
+const char *CHAPTER1_ligne15[] = {"│ \\c : pas de saut de ligne    -   #commentaire : commentaire     │","│ │"};
+const char *CHAPTER1_ligne16[] = {"│ \\t : tabulation              -   \[special] : pour l'afficher    │","│ │"};
+const char *CHAPTER1_ligne17[] = {"│ \\n : saut de ligne           -   . ou ~ : avec alt gr + 126     │","│ │"};

@@ -23,6 +23,8 @@ chmod main.c -o execute
 ./execute
 #if you want the english version : just add -en or -EN
 ./execute -en
+#Si vous voulez passer la page de garde / skip the start : add -noslide
+./execute -noslide
 ```
 ## Chapitres
 
@@ -49,6 +51,8 @@ chmod main.c -o execute
 
 ![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/slide.png "Page initial")
 ![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/chapters.png "Les chapitres")
+### English version of chapters
+![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/chaptersEN.png "Chapters")
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

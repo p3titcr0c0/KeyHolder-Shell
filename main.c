@@ -129,6 +129,8 @@ void chapter1(){
 	printf("│ \\c : pas de saut de ligne    -   #commentaire : commentaire     │\n");
 	printf("│ \\t : tabulation              -   \[special] : pour l'afficher    │\n");
 	printf("│ \\n : saut de ligne           -   tilde ~ : avec alt gr + é      │\n");
+	printf("│ type : permet de differencier commandes shell internes/ext/alias│\n");
+	printf("│ history : liste les anciennes commandes tapées, ~/.bash_history │\n");
 	interogation();
 }
 
@@ -176,6 +178,11 @@ void chapter3(){
 	printf("│         contient pattern en accédant à une base de données      │\n");
 	printf("│ find [adresse_depart] -name [x] : parcourt d’arborescence à     │\n");
 	printf("│   partir de adresse_depart à la recherche d’un fichier de nom x │\n");
+	printf("│ wc : afficher nombre de lignes / nb mots / nombre de caracteres │\n");
+	printf("│ cat : afficher / concatener fichiers                            │\n");
+	printf("│ paste : colle deux fichier l'un dans l'autre (cat en vertical)  │\n");
+	printf("│ head -n 11 fichier : affiche les 11 premieres lignes de fichier │\n");
+	printf("│ tail -n 11 fichier : affiche les 11 dernieres lignes de fichier │\n");
 	interogation();
 }
 
@@ -248,6 +255,119 @@ void chapter6(){
 	interogation();
 }
 
+void chapter7(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                         \033[38;5;82m4. Redirections\033[0m                         │\n├");
+	t(65);printf("┤\n");
+	printf("│ Tout processus possède une entrée standard par défaut et une    │\n");
+	printf("│ sortie standard, Les identifiants suivant définissent les       │\n");
+	printf("│ entrées/sorties classiques :                                    │\n");
+	printf("│                                                                 │\n");
+	printf("│ 0 -> descripteur de l’entrée standard (stdin)                   │\n");
+	printf("│ 1 -> sortie standard (stdout)                                   │\n");
+	printf("│ 2 -> sortie erreur (stderr)                                     │\n");
+	printf("│                                                                 │\n");
+	printf("│ Les redirections possibles :                                    │\n");
+	printf("│ - > fichier : redirige la sortie standard vers fichier          │\n");
+	printf("│ - >> fichir : ajoute la sortie standard vers fichier            │\n");
+	printf("│ - cmd1 | cmd2 : piper (tube) cmd1 dans cmd2, connecte la sortie │\n");
+	printf("│               standard avec l'entrée standard de cmd2           │\n");
+	printf("│ - tee fichier : duplique l'entrée standard dans fichier et le   │\n");
+	printf("│                 retranscrit sur la sortie standard              │\n");
+	printf("│ - X>&Y : redirige l'identifiant descripteur source X vers Y     │\n");
+	printf("│ - commande << EOF : redirige les lignes qui suivent dans stdin, │\n");
+	printf("│                     Pour refermer, une ligne avec EOF en 1er mot│\n");
+	printf("│ - exec 0<fichier : redirige stdin de toutes les commandes qui   │\n");
+	printf("│                    suivent                                      │\n");
+	printf("│ - exec 1>fichier : redirige la sortie standard de toutes les    │\n");
+	printf("│                    commandes qui suivent                        │\n");
+	interogation();
+}
+
+void chapter8(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                    \033[38;5;82m4. Script en shell (Bash)\033[0m                    │\n├");
+	t(65);printf("┤\n");
+	printf("│ Un script shell peut-etre executé grace à :                     │\n");
+	printf("│  - . script.sh OU sh script.sh : si le drot x est manquant      │\n");
+	printf("│  - ./script.sh : si script.sh possède les droits d'execution    │\n");
+	printf("│ tips: donner les droits d'execution (=chmod +x script.sh)       │\n");
+	printf("│ 1er ligne commencant par le sha bang : type sh, type bash,...   │\n");
+	printf("│                                                                 │\n");
+	printf("│                         LES VARIABLES :                         │\n");
+	printf("│ -echo : affiche le contenu d'une variable/texte (-n supprime \\n)│\n");
+	printf("│ definir une variable : var=5, la valeur de la variable est $var │\n");
+	printf("│ - unset $var : annule la definition de la variable              │\n");
+	printf("│ - eval $var : evalue le contenu de var                          │\n");
+	printf("│ - set : indique la liste de toutes les variables définies       │\n");
+	printf("│ - com=`mkdir hello` : la valeur de com est une commande         │\n");
+	printf("│ Une variable n'est valable que pour le shell qui l'a définie,   │\n");
+	printf("│ et supprimée à la fermeture du shell. pour eviter cela : export │\n");
+	printf("│ Deux variables particulière :                                   │\n");
+	printf("│ IFS -> caractere séparateur pour stdin  , set | grep IFS        │\n");
+	printf("│ OFS -> caractere séparateur pour stdout , set | grep OFS        │\n");
+	printf("│                                                                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                    PARAMETRES DES COMMANDES                     │\n");
+	printf("│  $0 le nom de la commande     |  $# le nombre de paramètres     │\n");
+	printf("│  $1,$2,... les arguments 1,2,.|  $? code retour derniere [comm] │\n");
+	printf("│  $* concatenation des args    |  $$ identifiant du shell        │\n");
+	printf("│  $@ chaque paramètre l'un après l'autre                         │\n");
+	printf("│  $! identifiant du dernier processus lancé en arrière plan      │\n");
+	printf("│                                                                 │\n");
+	printf("│                     STRUCTURES DE CONTROLES                     │\n");
+	printf("│ if [ test ]                   |  while [ test ]                 │\n");
+	printf("│ then                          |  do                             │\n");
+	printf("│         echo \"Vrai\"           |        echo \"Action en boucle\"  │\n");
+	printf("│ else                          |  done                           │\n");
+	printf("│         echo \"Faux\"           | //On remplacer while par until, │\n");
+	printf("│ fi                            |   until est \'jusqu'à ce que\' // │\n");
+	printf("│ ------------------------------ -------------------------------- │\n");
+	printf("│ liste_fichiers=`ls`                                             │\n");
+	printf("│                                                                 │\n");
+	printf("│ for fichier in $liste_fichiers  (ou sinon i in `seq 1 10`;)     │\n");
+	printf("│ do                                                              │\n");
+	printf("│         echo \"Fichier trouvé : $fichier\"                        │\n");
+	printf("│ done                                                            │\n");
+	printf("│ --------------------------------------------------------------- │\n");
+	printf("│  case $# in                                                     │\n");
+	printf("│    0) echo \"aucun parametre\"                                    │\n");
+	printf("│       echo \"Syntaxe :  $0 <nom d'utilisateur>\";;                │\n");
+	printf("│    1) echo \"1 parametre passe au programme : $1\";;              │\n");
+	printf("│    2) echo \"2 parametres passes au programme : $1 et $2\";;      │\n");
+	printf("│    *) echo \"TROP DE PARAMETRES !\"                               │\n");
+	printf("│  esac                                                           │\n");
+	printf("│                                                                 │\n");
+	printf("│                        COMMANDES DE TEST                        │\n");
+	printf("│ En shell la commande renvoie 0 si elle est vrai                 │\n");
+	printf("│ Vérifier que fichier existe : test -e fichier                   │\n");
+	printf("│ Voir toutes les utilisations de test ... man test               │\n");
+	printf("│                                                                 │\n");
+	printf("│ Vérifier si une chaine de cara est nulle : test -z chaine       │\n");
+	printf("│ -n teste le contraire, egalement ch1=ch2 ou ch1!=ch2            │\n");
+	printf("│                                                                 │\n");
+	printf("│ Tester des nombres :                                            │\n");
+	printf("│        -eq : equal / -ne no-equal / -lt plus petit que          │\n");
+	printf("│-gt : plus grand que / -ge : -gt + ou égal à / -le : lt ou égal à│\n");
+	printf("│ la commande expr fait des calculs arithmétiques                 │\n");
+	printf("│                                                                 │\n");
+	printf("│                            FONCTIONS                            │\n");
+	printf("│ C'est possible de creer des fonctions :                         │\n");
+	printf("│     function_name () { commands; }                              │\n");
+	printf("│ Dans la fonction on accèdent aux variables avec $1,$2,.. (shift)│\n");
+	printf("│ Appel de la fonction : function_name arg1 23 \"ca\"               │\n");
+	printf("│ Les variables doivent etre créees avec : local var=valeur       │\n");
+	printf("│ La fonction peut (return valeur) si 0<=valeur<=255              │\n");
+	printf("│                                                                 │\n");
+	printf("│                         SOUS-SHELL                              │\n");
+	printf("│ On peut regrouper les commandes à l'aide de { } et ( )          │\n");
+	printf("│ { ...;} -> regroupement de valeur, pas de changement            │\n");
+	printf("│ ( ) -> executé dans un sous-shell, les variables utilisées ne   │\n");
+	printf("│        sont pas visibles en dehors de ce sous-shell             │\n");
+
+	interogation();
+}
+
 void tableDesMatieres(){
 	printf("┌");t(65);printf("┐\n│                        \033[0;31mTable des Matières\033[0m                       │\n├");
 	t(32);printf("┬");t(32);printf("┤\n");
@@ -257,8 +377,8 @@ void tableDesMatieres(){
 	printf("│ 4. Droits d'accès aux fichiers ¦ 18. SSH et clefs X             │\n");
 	printf("│ 5. Raccourcis clavier          ¦                                │\n");
 	printf("│ 6. Archivage                   ¦                                │\n");
-	printf("│ 7. Redirections X              ¦                                │\n");
-	printf("│ 8. Script en shell (Bash) X    ¦                                │\n");
+	printf("│ 7. Redirections                ¦                                │\n");
+	printf("│ 8. Script en shell (Bash)      ¦                                │\n");
 	printf("│ 9. Compilation X               ¦                                │\n");
 	printf("│ 10. Expressions régulières et  ¦                                │\n");
 	printf("│     patterns X                 ├────────────────────────────────┤\n");
@@ -284,9 +404,9 @@ void tableDesMatieres(){
         case 4 : chapter4(); break;
         case 5 : chapter5(); break;
         case 6 : chapter6(); break;
-        //case 7 : printf("2"); break;
-        //case 8 : printf("2"); break;
-        //case 9 : printf("2"); break;
+        case 7 : chapter7(); break;
+        case 8 : chapter8(); break;
+        //case 9 : chapter9(); break;
         //case 10 : printf("2"); break;
         //case 11 : printf("2"); break;
         //case 12 : printf("2"); break;

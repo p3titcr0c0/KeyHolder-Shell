@@ -30,20 +30,20 @@ chmod main.c -o execute
 2. Répertoires de Linux
 3. Manipulation de fichiers
 4. Droits d'accès aux fichiers
-5. Raccourcis clavie
+5. Raccourcis clavier
 6. Archivage
 7. Redirections
 8. Script en shell (Bash)
 9. Compilation
-10. Expressions régulières et  patterns
-11. Le shell et les expressions régulières
-12. Grep
-13. Sed
-14. Awk
-15. Utilisation de Git
-16. Gestion des processus
-17. Svn
-18. SSH et clefs
+10. Expressions régulières et patterns (manquant)
+11. Le shell et les expressions régulières (manquant)
+12. Grep (manquant)
+13. Sed (manquant)
+14. Awk (manquant)
+15. Utilisation de Git (manquant)
+16. Gestion des processus (manquant)
+17. Svn (manquant)
+18. SSH et clefs (manquant)
 
 ## Screenshots
 

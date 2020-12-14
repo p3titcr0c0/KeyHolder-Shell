@@ -4,6 +4,7 @@ Outil écrit en C regroupant les utilisations majeures du shell Unix en différe
 ## A venir
 - de nouveaux chapitres
 - une utilisation simplifiée
+- création d'un lanceur pour l'exécutable
 
 ## Installation
 

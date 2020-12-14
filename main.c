@@ -18,7 +18,7 @@ bool lang;
 /*------------------------------------------------------------*/
 /*                      KeyHolder Shell                       */
 /* Version :                                                  */
-const float VERSION = 2.0;
+const float VERSION = 3.0;
 /* Utilité : Pense bête pour le shell                         */
 /* Autheur : Petitcroco                                       */
 /* Date : Décembre 2020                                       */
@@ -368,6 +368,140 @@ void chapter8(){
 	interogation();
 }
 
+void chapter9(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                          \033[38;5;82m4. Compilation\033[0m                         │\n├");
+	t(65);printf("┤\n");
+	printf("│ Compiler un script shell :                                      │\n");
+	printf("│  - . script.sh OU sh script.sh : si le drot x est manquant      │\n");
+	printf("│  - ./script.sh : si script.sh possède les droits d'execution    │\n");
+	printf("│ tips: donner les droits d'execution (=chmod +x script.sh)       │\n");
+	printf("│                                                                 │\n");
+	printf("│ Compiler un fichier .c                                          │\n");
+	printf("│ gcc code.c -o output                                            │\n");
+	printf("│ L'executer : ./output                                           │\n");
+	printf("│                                                                 │\n");
+	printf("│ Compiler un .java avec la librairie test dans \"build/\"          │\n");
+	printf("│ javac -d \"build/\" -cp \"lib/test.jar\" src/games/*.java           │\n");
+	printf("│ Executer classe Demo du package games                           │\n");
+	printf("│ java -cp \"build/:lib/test.jar\" games.Demo                       │\n");
+	interogation();
+}
+
+void chapter10(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│              \033[38;5;82m4. Expressions régulières et patterns\033[0m              │\n├");
+	t(65);printf("┤\n");
+	printf("│ Voir le pdf                                                     │\n");
+	system("less content/regex-cheatsheet.pdf");
+	interogation();
+}
+
+void chapter11(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│            \033[38;5;82m4. Le shell et les expressions régulières\033[0m            │\n├");
+	t(65);printf("┤\n");
+	printf("│ Une expression régulière est une chaîne de caractères utilisant │\n");
+	printf("│ des caractères particuliers pour désigner des modèles           │\n");
+	printf("│ d’expression                                                    │\n");
+	printf("│                                                                 │\n");
+	printf("│ Le shell offre la possibilité de traiter ces expressions        │\n");
+	printf("│ — expr ‘‘bonjour’’ : ‘‘.*’’ calcule la taille                   │\n");
+	printf("│ — expr ‘‘il fait beau’’ : ‘‘\\(..\\)’’ indique “il”               │\n");
+	printf("│ — expr ‘‘il fait beau’’ : ‘‘.*\\(....\\)’’ indique “beau”         │\n");
+	printf("│                                                                 │\n");
+	printf("│ (on indique entre parenthèses ce qu’on veut garder)             │\n");
+	printf("│                                                                 │\n");
+	printf("│ Modification de la valeur d’une variable :                      │\n");
+	printf("│ — ${#var} longueur de la chaîne                                 │\n");
+	printf("│ — ${var##model} retire la plus grande occurrence au début       │\n");
+	printf("│ — ${var#model} retire la plus petite occurrence au début        │\n");
+	printf("│ — fonctionne avec l'occurence de la fin avec un ou 2 pourcentage│\n");
+	printf("│                                                                 │\n");
+	printf("│ Autres utilitaire :                                             │\n");
+	printf("│ $ basename index.html .html    |  $ dirname hello/world.html    │\n");
+	printf("│ index                          |  hello                         │\n");
+	interogation();
+}
+
+void chapter12(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                             \033[38;5;82m4. Grep\033[0m                             │\n├");
+	t(65);printf("┤\n");
+	printf("│ La commande grep regexp fichier est utilisée pour filtrer les   │\n");
+	printf("│ lignes du fichier qui correspondent à l’expression régulière    │\n");
+	printf("│                                                                 │\n");
+	printf("│ Les options classiques sont :                                   │\n");
+	printf("│ — -v affiche les lignes qui ne contiennent pas la chaîne        │\n");
+	printf("│ — -c compte le nombre de lignes qui matchent                    │\n");
+	printf("│ — -i pas de distinction majuscules/minuscules                   │\n");
+	printf("│ — -n affiche le numéro des lignes                               │\n");
+	printf("│ — -l affiche uniquement les noms de fichier                     │\n");
+	printf("│                                                                 │\n");
+	printf("│ Exemples :                                                      │\n");
+	printf("│ Retirer toutes les lignes commencant par un i                   │\n");
+	printf("│ $grep -v \"\136i\" ip.csv > new.csv                                  │\n");
+	printf("│ Afficher les lignes ne contenant que coucou                     │\n");
+	printf("│ $grep coucou texte.txt                                          │\n");
+	printf("│ Rechercher une suite de 10 chiffres dans le rep                 │\n");
+	printf("│ $grep \"[0-9]\\{10\\}\" *                                           │\n");
+	printf("│                                                                 │\n");
+	printf("│ options utiles :                                                │\n");
+	printf("│ -r : faire une recherche recursive dans le repertoire choisi    │\n");
+	printf("│ -color : pour colorer                                           │\n");
+	printf("│ -n : avoir les numéros de lignes                                │\n");
+	printf("│ -w : affiche seulement si le terme recherché est un mot         │\n");
+	interogation();
+}
+
+
+void chapter13(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                             \033[38;5;82m4. Sed\033[0m                              │\n├");
+	t(65);printf("┤\n");
+	printf("│ Sed permet d’exécuter des commandes d’édition sur un fichier    │\n");
+	printf("│ ou un flux (pipe).                                              │\n");
+	printf("│ Utilisation : sed ’s/regexp/remplacement/’ fichier.ext          │\n");
+	printf("│  sed -f fichier -->passage de commande par un script            │\n");
+	printf("│  sed - i --> modifie directement le fichier source              │\n");
+	printf("│                                                                 │\n");
+	printf("│ SUPPRESION                                                      │\n");
+	printf("│ selon son numéro : sed `1d;4d` test.txt                         │\n");
+	printf("│ selon une REGEX : sed `/^#/d` test.txt #supprime les coms       │\n");
+	printf("│                                                                 │\n");
+	printf("│ FILTRAGE                                                        │\n");
+	printf("│ afficher seulement les coms : sed -n '/^#/p' test.txt           │\n");
+	printf("│ juste la ligne 5 : sed -n 5p test.txt                           │\n");
+	printf("│ de la ligne 5 a 20 : sed -n 5,20p test.txt                      │\n");
+	printf("│ ne pas afficher de ligne contenant de a a z :                   │\n");
+	printf("│ sed -n '/[a-h]/!p' depts2012.txt                                │\n");
+	printf("│                                                                 │\n");
+	printf("│ SUBSTITUTION                                                    │\n");
+	printf("│ remplacer les \" par du vide sed '/^#/d; s/\"\134\134g' ip.csv          │\n");
+	printf("│ /g permet d'appliquer a toute la ligne                          │\n");
+	printf("│ remplacer abc par xyz : sed `s/abc/xyz` truc.txt                │\n");
+	printf("│                                                                 │\n");
+	printf("│ COMMANDES GROUPEES                                              │\n");
+	printf("│ remplacer dupont par dupond dans les commentaires et é,è par e: │\n");
+	printf("│ sed '/^#/ {y/éèê/eee;s/dupont/dupond}' source.txt               │\n");
+	printf("│                                                                 │\n");
+	printf("│ Les parties d’expression régulière qui sont entourées par       │\n");
+	printf("│ \\(...\\) sont mémorisées et rappelées par \1, \2, ...                │\n");
+	interogation();
+}
+
+void chapter14(){
+	system("clear");
+	printf("┌");t(65);printf("┐\n│                             \033[38;5;82m4. Awk\033[0m                             │\n├");
+	t(65);printf("┤\n");
+	printf("│ awk est un véritable langage de programmation évolué, mais sa   │\n");
+	printf("│ finalité est de traiter des fichiers de lignes structurées.     │\n");
+	printf("│                                                                 │\n");
+	printf("│ Voir le pdf                                                     │\n");
+	system("less content/awk.pdf");
+	interogation();
+}
+
 void tableDesMatieres(){
 	printf("┌");t(65);printf("┐\n│                        \033[0;31mTable des Matières\033[0m                       │\n├");
 	t(32);printf("┬");t(32);printf("┤\n");
@@ -379,14 +513,14 @@ void tableDesMatieres(){
 	printf("│ 6. Archivage                   ¦                                │\n");
 	printf("│ 7. Redirections                ¦                                │\n");
 	printf("│ 8. Script en shell (Bash)      ¦                                │\n");
-	printf("│ 9. Compilation X               ¦                                │\n");
+	printf("│ 9. Compilation                 ¦                                │\n");
 	printf("│ 10. Expressions régulières et  ¦                                │\n");
-	printf("│     patterns X                 ├────────────────────────────────┤\n");
+	printf("│     patterns (pleine ecran)    ├────────────────────────────────┤\n");
 	printf("│ 11. Le shell et les            │                                │\n");
-	printf("│     expressions régulières X   │                                │\n");
-	printf("│ 12. Grep  X                    │                                │\n");
-	printf("│ 13. Sed X                      ├────────────────────────────────┤\n");
-	printf("│ 14. Awk X                      │Page 1/1             0. Quitter │\n");
+	printf("│     expressions régulières     │                                │\n");
+	printf("│ 12. Grep                       │                                │\n");
+	printf("│ 13. Sed                        ├────────────────────────────────┤\n");
+	printf("│ 14. Awk                        │Page 1/1             0. Quitter │\n");
 	printf("└");t(32);printf("┴");t(32);printf("┘\n\n");
 
 	printf("Entrer le chapitre qui vous intèresse ?\n");
@@ -406,12 +540,16 @@ void tableDesMatieres(){
         case 6 : chapter6(); break;
         case 7 : chapter7(); break;
         case 8 : chapter8(); break;
-        //case 9 : chapter9(); break;
-        //case 10 : printf("2"); break;
-        //case 11 : printf("2"); break;
-        //case 12 : printf("2"); break;
-        //case 13 : printf("2"); break;
-        //case 14 : printf("2"); break;
+        case 9 : chapter9(); break;
+        case 10 : chapter10(); break;
+        case 11 : chapter11(); break;
+        case 12 : chapter12(); break;
+        case 13 : chapter13(); break;
+        case 14 : chapter14(); break;
+        //case 15 : chapter15(); break;
+        //case 16 : chapter16(); break;
+        //case 17 : chapter17(); break;
+        //case 18 : chapter18(); break;
         default: system("clear"); tableDesMatieres(); break;
     }
 }

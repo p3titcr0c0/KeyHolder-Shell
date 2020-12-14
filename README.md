@@ -1,6 +1,10 @@
 # KeyHolder-Shell
 Outil écrit en C regroupant les utilisations majeures du shell Unix en différents chapitres.
 
+## A venir
+- de nouveaux chapitres
+- une utilisation simplifiée
+
 ## Installation
 
 Avec git:
@@ -19,10 +23,9 @@ rm main.zip
 
 ```python
 cd KeyHolder-Shell
-chmod main.c -o execute
-./execute
+sh keyholdershell.sh
 #Si vous voulez passer la page de garde / skip the start : add -noslide
-./execute -noslide
+sh keyholdershell.sh -noslide
 ```
 ## Chapitres
 
@@ -35,11 +38,11 @@ chmod main.c -o execute
 7. Redirections
 8. Script en shell (Bash)
 9. Compilation
-10. Expressions régulières et patterns (manquant)
-11. Le shell et les expressions régulières (manquant)
-12. Grep (manquant)
-13. Sed (manquant)
-14. Awk (manquant)
+10. Expressions régulières et patterns
+11. Le shell et les expressions régulières
+12. Grep
+13. Sed
+14. Awk
 15. Utilisation de Git (manquant)
 16. Gestion des processus (manquant)
 17. Svn (manquant)
@@ -47,10 +50,8 @@ chmod main.c -o execute
 
 ## Screenshots
 
-![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/slide.png "Page initial")
-![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/chapters.png "Les chapitres")
-### English version of chapters
-![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/img/chaptersEN.png "Chapters")
+![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/content/slide.png "Page initial")
+![Alt text](https://raw.githubusercontent.com/p3titcr0c0/KeyHolder-Shell/main/content/chapters.png "Les chapitres")
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
